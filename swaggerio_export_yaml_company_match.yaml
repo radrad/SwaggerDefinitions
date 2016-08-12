@@ -1,0 +1,111 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: DnbRest REST API documentation
+host: api.dnbdirectapps.com
+basePath: /dev
+paths:
+  /DnBAPI-17/rest/company/match:
+    get:
+      operationId: match
+      parameters:
+        - name: ApplicationTransactionID
+          in: query
+          required: false
+          type: string
+        - name: TransactionTimestamp
+          in: query
+          required: false
+          type: string
+        - name: SubmittingOfficeID
+          in: query
+          required: false
+          type: string
+        - name: DUNSNumber
+          in: query
+          required: false
+          type: string
+        - name: SubjectName
+          in: query
+          required: false
+          type: string
+        - name: LineText
+          in: query
+          required: false
+          type: string
+        - name: DisplaySequence
+          in: query
+          required: false
+          type: integer
+        - name: PrimaryTownName
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+        - name: TerritoryName
+          in: query
+          required: false
+          type: string
+        - name: FullPostalCode
+          in: query
+          required: false
+          type: string
+        - name: TelecommunicationNumber
+          in: query
+          required: false
+          type: string
+        - name: InternationalDialingCode
+          in: query
+          required: false
+          type: string
+        - name: OrganizationIdentificationNumber
+          in: query
+          required: false
+          type: string
+        - name: CandidateMaximumQuantity
+          in: query
+          required: false
+          type: string
+        - name: ConfidenceLowerLevelThresholdValue
+          in: query
+          required: false
+          type: string
+        - name: ExclusionDataDescription
+          in: query
+          required: false
+          type: string
+        - name: OrderReasonCode
+          in: query
+          required: false
+          type: string
+        - name: CustomerReferenceText
+          in: query
+          required: false
+          type: string
+        - name: CustomerBillingEndorsementText
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+securityDefinitions:
+  username:
+    type: apiKey
+    name: username
+    in: header
+  password:
+    type: apiKey
+    name: password
+    in: header
+  API-KEY:
+    type: apiKey
+    name: API-KEY
+    in: header
+security:
+  - username: []
+    password: []
+    API-KEY: []

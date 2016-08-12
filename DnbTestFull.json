@@ -1,0 +1,1045 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: DnbRest REST API documentation
+host: api.dnbdirectapps.com
+basePath: /dev
+paths:
+  /DnBAPI-17/rest/company/company/cleanseAndStandardize:
+    get:
+      operationId: cleanseAndStandardize
+      parameters:
+        - name: ApplicationTransactionID
+          in: query
+          required: false
+          type: string
+        - name: TransactionTimestamp
+          in: query
+          required: false
+          type: string
+        - name: SubmittingOfficeID
+          in: query
+          required: false
+          type: string
+        - name: OrganizationName
+          in: query
+          required: false
+          type: string
+        - name: LineText
+          in: query
+          required: false
+          type: string
+        - name: DisplaySequence
+          in: query
+          required: false
+          type: integer
+        - name: PrimaryTownName
+          in: query
+          required: false
+          type: string
+        - name: CountyName
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+        - name: TerritoryName
+          in: query
+          required: false
+          type: string
+        - name: PostalCode
+          in: query
+          required: false
+          type: string
+        - name: CustomerReferenceText
+          in: query
+          required: false
+          type: string
+        - name: CustomerBillingEndorsementText
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/familytree/{unique_id}:
+    post:
+      operationId: familytree
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: include_primary_sic
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/findcompanycleansematch:
+    post:
+      operationId: findcompanycleansematch
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/getCleanseMatch:
+    get:
+      operationId: getCleanseMatch
+      parameters:
+        - name: ApplicationTransactionID
+          in: query
+          required: false
+          type: string
+        - name: TransactionTimestamp
+          in: query
+          required: false
+          type: string
+        - name: SubmittingOfficeID
+          in: query
+          required: false
+          type: string
+        - name: DUNSNumber
+          in: query
+          required: false
+          type: string
+        - name: SubjectName
+          in: query
+          required: false
+          type: string
+        - name: StreetAddressLine
+          in: query
+          required: false
+          type: string
+        - name: DisplaySequence
+          in: query
+          required: false
+          type: integer
+        - name: PrimaryTownName
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+        - name: TerritoryName
+          in: query
+          required: false
+          type: string
+        - name: FullPostalCode
+          in: query
+          required: false
+          type: string
+        - name: TelecommunicationNumber
+          in: query
+          required: false
+          type: string
+        - name: InternationalDialingCode
+          in: query
+          required: false
+          type: string
+        - name: OrganizationIdentificationNumber
+          in: query
+          required: false
+          type: string
+        - name: CandidateMaximumQuantity
+          in: query
+          required: false
+          type: string
+        - name: ConfidenceLowerLevelThresholdValue
+          in: query
+          required: false
+          type: string
+        - name: ExclusionDataDescription
+          in: query
+          required: false
+          type: string
+        - name: IncludeCleansedAndStandardizedInformationIndicator
+          in: query
+          required: false
+          type: string
+        - name: OrderReasonCode
+          in: query
+          required: false
+          type: string
+        - name: CustomerReferenceText
+          in: query
+          required: false
+          type: string
+        - name: CustomerBillingEndorsementText
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/match:
+    get:
+      operationId: match
+      parameters:
+        - name: ApplicationTransactionID
+          in: query
+          required: false
+          type: string
+        - name: TransactionTimestamp
+          in: query
+          required: false
+          type: string
+        - name: SubmittingOfficeID
+          in: query
+          required: false
+          type: string
+        - name: DUNSNumber
+          in: query
+          required: false
+          type: string
+        - name: SubjectName
+          in: query
+          required: false
+          type: string
+        - name: LineText
+          in: query
+          required: false
+          type: string
+        - name: DisplaySequence
+          in: query
+          required: false
+          type: integer
+        - name: PrimaryTownName
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+        - name: TerritoryName
+          in: query
+          required: false
+          type: string
+        - name: FullPostalCode
+          in: query
+          required: false
+          type: string
+        - name: TelecommunicationNumber
+          in: query
+          required: false
+          type: string
+        - name: InternationalDialingCode
+          in: query
+          required: false
+          type: string
+        - name: OrganizationIdentificationNumber
+          in: query
+          required: false
+          type: string
+        - name: CandidateMaximumQuantity
+          in: query
+          required: false
+          type: string
+        - name: ConfidenceLowerLevelThresholdValue
+          in: query
+          required: false
+          type: string
+        - name: ExclusionDataDescription
+          in: query
+          required: false
+          type: string
+        - name: OrderReasonCode
+          in: query
+          required: false
+          type: string
+        - name: CustomerReferenceText
+          in: query
+          required: false
+          type: string
+        - name: CustomerBillingEndorsementText
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/refresh/companyList:
+    get:
+      operationId: companyList
+      parameters:
+        - name: unique_id
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+    post:
+      operationId: companyList
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/refresh/date/{refreshed_since_date}:
+    get:
+      operationId: date
+      parameters:
+        - name: page_number
+          in: query
+          required: false
+          type: integer
+        - name: refreshed_since_date
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{DUNSNumber}/report/{DNBProductID}:
+    get:
+      operationId: DNBProductID
+      parameters:
+        - name: ApplicationTransactionID
+          in: query
+          required: false
+          type: string
+        - name: TransactionTimestamp
+          in: query
+          required: false
+          type: string
+        - name: SubmittingOfficeID
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+        - name: OrganizationIdentificationNumber
+          in: query
+          required: false
+          type: string
+        - name: OrganizationIdentificationNumberTypeCode
+          in: query
+          required: false
+          type: integer
+        - name: DNBProductModuleCode
+          in: query
+          required: false
+          type: integer
+        - name: MergeModuleAttachmentsIndicator
+          in: query
+          required: false
+          type: boolean
+        - name: ProductFormatPreferenceCode
+          in: query
+          required: false
+          type: integer
+        - name: CharacterSetPreferenceCode
+          in: query
+          required: false
+          type: integer
+        - name: LanguagePreferenceCode
+          in: query
+          required: false
+          type: integer
+        - name: OrderReasonCode
+          in: query
+          required: false
+          type: integer
+        - name: TradeUpIndicator
+          in: query
+          required: false
+          type: boolean
+        - name: ReturnOnlyInDateDataIndicator
+          in: query
+          required: false
+          type: boolean
+        - name: ArchiveProductOptOutIndicator
+          in: query
+          required: false
+          type: boolean
+        - name: ExtendArchivePeriodIndicator
+          in: query
+          required: false
+          type: boolean
+        - name: PortfolioAssetContainerID
+          in: query
+          required: false
+          type: long
+        - name: CustomerReferenceText
+          in: query
+          required: false
+          type: string
+        - name: CustomerBillingEndorsementText
+          in: query
+          required: false
+          type: string
+        - name: DNBProductID
+          in: path
+          required: true
+          type: string
+        - name: DUNSNumber
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}:
+    get:
+      operationId: unique_id
+      parameters:
+        - name: view
+          in: query
+          required: false
+          type: string
+        - name: return_in_reported_currency
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/comparisonData:
+    get:
+      operationId: comparisonData
+      parameters:
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/competitors:
+    get:
+      operationId: competitors
+      parameters:
+        - name: top_competitor
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/financial/detail:
+    get:
+      operationId: detail
+      parameters:
+        - name: return_in_reported_currency
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/financial/summary:
+    get:
+      operationId: summary
+      parameters:
+        - name: return_in_reported_currency
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/market/analysis_report:
+    get:
+      operationId: analysis_report
+      parameters:
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/market/data:
+    get:
+      operationId: data
+      parameters:
+        - name: return_in_reported_currency
+          in: query
+          required: false
+          type: boolean
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/news:
+    get:
+      operationId: news
+      parameters:
+        - name: start_date
+          in: query
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          required: false
+          type: string
+        - name: filter
+          in: query
+          required: false
+          type: string
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/company/{unique_id}/optional:
+    post:
+      operationId: optional
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: unique_id
+          in: path
+          required: true
+          type: long
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/industry/{dnb_industry_code}:
+    get:
+      operationId: dnb_industry_code
+      parameters:
+        - name: chapter_name
+          in: query
+          required: false
+          type: string
+        - name: dnb_industry_code
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/industry/{dnb_industry_code}/call_prep:
+    get:
+      operationId: call_prep
+      parameters:
+        - name: dnb_industry_code
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/industry/{dnb_industry_code}/dnb:
+    get:
+      operationId: dnb
+      parameters:
+        - name: dnb_industry_code
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/match:
+    get:
+      operationId: referenceData
+      parameters:
+        - name: SubjectName
+          in: query
+          required: false
+          type: string
+        - name: CountryISOAlpha2Code
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/person/{unique_company_id}/{co_official_id}:
+    get:
+      operationId: co_official_id
+      parameters:
+        - name: connect_mail
+          in: query
+          required: false
+          type: boolean
+        - name: convert_currency_to
+          in: query
+          required: false
+          type: string
+        - name: view
+          in: query
+          required: false
+          type: string
+        - name: unique_company_id
+          in: path
+          required: true
+          type: long
+        - name: co_official_id
+          in: path
+          required: true
+          type: long
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/company/advanced/:
+    post:
+      operationId: advanced
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: boolean
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/company/advanced/optional:
+    post:
+      operationId: optional
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: boolean
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/company/basic/{keyword}:
+    get:
+      operationId: keyword
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          type: string
+        - name: keyword
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/company/{keyword}:
+    get:
+      operationId: keyword
+      parameters:
+        - name: duns_from
+          in: query
+          required: false
+          type: long
+        - name: duns_to
+          in: query
+          required: false
+          type: long
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: search_by
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: match_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: string
+        - name: keyword
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+    post:
+      operationId: keyword
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: duns_from
+          in: query
+          required: false
+          type: long
+        - name: duns_to
+          in: query
+          required: false
+          type: long
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: search_by
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: string
+        - name: match_by
+          in: query
+          required: false
+          type: string
+        - name: keyword
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/industry/advanced:
+    post:
+      operationId: advanced
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/industry/province/{province_id}:
+    get:
+      operationId: province
+      parameters:
+        - name: province_id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/industry/state/{state_id}:
+    get:
+      operationId: state
+      parameters:
+        - name: state_id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/industry/{keyword}:
+    get:
+      operationId: keyword
+      parameters:
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: premium_industry_only
+          in: query
+          required: false
+          type: boolean
+        - name: keyword
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+    post:
+      operationId: keyword
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: premium_industry_only
+          in: query
+          required: false
+          type: boolean
+        - name: keyword
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/person/advanced:
+    post:
+      operationId: advanced
+      consumes:
+        - application/json
+      parameters:
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/search/person/{keyword}:
+    get:
+      operationId: keyword
+      parameters:
+        - name: duns_from
+          in: query
+          required: false
+          type: long
+        - name: duns_to
+          in: query
+          required: false
+          type: long
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: boolean
+        - name: match_by
+          in: query
+          required: false
+          type: string
+        - name: keyword
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+    post:
+      operationId: keyword
+      consumes:
+        - application/json;charset="UTF-8"
+      parameters:
+        - name: duns_from
+          in: query
+          required: false
+          type: long
+        - name: duns_to
+          in: query
+          required: false
+          type: long
+        - name: hit_offset
+          in: query
+          required: false
+          type: integer
+        - name: max_records
+          in: query
+          required: false
+          type: integer
+        - name: sort_direction
+          in: query
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          required: false
+          type: string
+        - name: return_search_navigation
+          in: query
+          required: false
+          type: boolean
+        - name: match_by
+          in: query
+          required: false
+          type: string
+        - name: keyword
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Request body
+          required: true
+      responses:
+        '200':
+          description: successful operation
+  /DnBAPI-17/rest/company/user/credits:
+    get:
+      operationId: credits
+      parameters: []
+      responses:
+        '200':
+          description: successful operation
+securityDefinitions:
+  username:
+    type: apiKey
+    name: username
+    in: header
+  password:
+    type: apiKey
+    name: password
+    in: header
+  API-KEY:
+    type: apiKey
+    name: API-KEY
+    in: header
+security:
+  - username: []
+    password: []
+    API-KEY: []
